@@ -1,9 +1,7 @@
 #pragma once
 
 #include "Shape.h"
-/**
- * DO NOT MODIFY
- */
+
 template<class T>
 class Point2D : public Shape {
 protected:
