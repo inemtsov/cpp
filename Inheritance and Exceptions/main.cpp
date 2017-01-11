@@ -55,7 +55,7 @@ int main() {
     renderCircle(60, 60, 30, renderer);
 
 
-    //TODO GRAPHICS- UNCOMMENT THE SECTION BELOW WHEN YOUR TESTS PASS
+    //
     /*
      Circle<float> *circleFloat = new Circle<float>(333.4, 333.2, 40.4);
      renderCircle(circleFloat->getX(), circleFloat->getY(), circleFloat->getRadius(), renderer);
