@@ -5,9 +5,7 @@
 
 using namespace std;
 
-/**
- * DO NOT MODIFY
- */
+
 class CustomException : public exception {
 private:
     int errorCode;
