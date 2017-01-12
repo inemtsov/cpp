@@ -117,7 +117,6 @@ void runOurDictionaryStuff() {
 
 int main() {
 
-    //Uncomment the below to test stuff out.
     runHashedEntryExamples();
     dictionaryTestFromText();
     runOurDictionaryStuff();
