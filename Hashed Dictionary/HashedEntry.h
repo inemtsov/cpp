@@ -22,7 +22,7 @@ public:
     void operator=(const ItemType&);
 };
 
-//TODO Implement the necessary functions.
+
 template<class KeyType, class ItemType>
 HashedEntry<KeyType, ItemType>::HashedEntry() { }
 template<class KeyType, class ItemType>
@@ -50,6 +50,5 @@ HashedEntry<KeyType, ItemType>* HashedEntry<KeyType, ItemType>::getNext() const 
 
 template<class KeyType, class ItemType>
 void HashedEntry<KeyType, ItemType>::operator=(const ItemType& newItem){
-    //DO NOT MODIFY
     this->setItem(newItem);
 }
