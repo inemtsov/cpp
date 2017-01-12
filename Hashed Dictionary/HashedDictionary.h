@@ -64,7 +64,7 @@ int HashedDictionary<KeyType, ItemType>::getHashIndex(const KeyType &key) const 
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::HashedDictionary()
         : itemCount(0), hashTableSize(DEFAULT_SIZE) {
-    //DO NOT MODIFY
+            
     hashTable = new HashedEntry<KeyType, ItemType> *[DEFAULT_SIZE];
     for (int i = 0; i < DEFAULT_SIZE; i++)
         hashTable[i] = nullptr;
@@ -72,7 +72,7 @@ HashedDictionary<KeyType, ItemType>::HashedDictionary()
 
 template<class KeyType, class ItemType>
 void HashedDictionary<KeyType, ItemType>::destroyDictionary() {
-    //TODO
+
 
 
     for(int i=0; i < hashTableSize; i++){
@@ -89,19 +89,19 @@ void HashedDictionary<KeyType, ItemType>::destroyDictionary() {
 
 template<class KeyType, class ItemType>
 HashedDictionary<KeyType, ItemType>::~HashedDictionary() {
-    //DO NOT MODIFY
+    
     destroyDictionary();
 }
 
 template<class KeyType, class ItemType>
 void HashedDictionary<KeyType, ItemType>::clear() {
-    //DO NOT MODIFY
+    
     destroyDictionary();
 }
 
 template<class KeyType, class ItemType>
 bool HashedDictionary<KeyType, ItemType>::isEmpty() const {
-    //TODO
+  
     bool CountCheck = false;
     if( itemCount==0){
         CountCheck=true;
@@ -111,13 +111,13 @@ bool HashedDictionary<KeyType, ItemType>::isEmpty() const {
 
 template<class KeyType, class ItemType>
 int HashedDictionary<KeyType, ItemType>::getNumberOfItems() const {
-    //TODO
+   
     return itemCount;
 }
 
 template<class KeyType, class ItemType>
 bool HashedDictionary<KeyType, ItemType>::add(const KeyType &searchKey, const ItemType &newItem) {
-    //TODO
+ 
     HashedEntry<KeyType, ItemType>* entryToAddPtr= new HashedEntry<KeyType, ItemType>(searchKey, newItem);
     int hashIndex=getHashIndex(searchKey);
     if (hashTable[hashIndex]== nullptr)
@@ -134,7 +134,7 @@ return true;
 
 template<class KeyType, class ItemType>
 bool HashedDictionary<KeyType, ItemType>::remove(const KeyType &searchKey) {
-    //TODO
+  
     bool isSuccessful=false;
     int hashIndex= getHashIndex(searchKey);
     if(hashTable[hashIndex]!= nullptr)
@@ -166,7 +166,7 @@ bool HashedDictionary<KeyType, ItemType>::remove(const KeyType &searchKey) {
 
 template<class KeyType, class ItemType>
 ItemType HashedDictionary<KeyType, ItemType>::getItem(const KeyType &searchKey) const {
-    //TODO
+   
     int hashIndex=getHashIndex(searchKey);
     HashedEntry<KeyType, ItemType>* curPtr=hashTable[hashIndex];
     if (hashTable[hashIndex]==nullptr){
@@ -184,7 +184,7 @@ ItemType HashedDictionary<KeyType, ItemType>::getItem(const KeyType &searchKey) 
 
 template<class KeyType, class ItemType>
 bool HashedDictionary<KeyType, ItemType>::contains(const KeyType &searchKey) const {
-    //TODO
+    
     bool found=false;
     int hashIndex= getHashIndex(searchKey);
     if(hashTable[hashIndex]!= nullptr)
@@ -210,7 +210,7 @@ bool HashedDictionary<KeyType, ItemType>::contains(const KeyType &searchKey) con
 
 template<class KeyType, class ItemType>
 void HashedDictionary<KeyType, ItemType>::traverse(void (*visit)(ItemType &)) const {
-    //DO NOT MODIFY
+    
     for (int index = 0; index < hashTableSize; index++) {
         HashedEntry<KeyType, ItemType> *chainPtr = hashTable[index];
         while (chainPtr != nullptr) {
@@ -223,7 +223,7 @@ void HashedDictionary<KeyType, ItemType>::traverse(void (*visit)(ItemType &)) co
 
 template<class KeyType, class ItemType>
 std::vector<ItemType> HashedDictionary<KeyType, ItemType>::toVector() const {
-    //DO NOT MODIFY
+   
     std::vector<ItemType> returnVector;
     for (int index = 0; index < hashTableSize; index++) {
         HashedEntry<KeyType, ItemType> *chainPtr = hashTable[index];
@@ -238,7 +238,7 @@ std::vector<ItemType> HashedDictionary<KeyType, ItemType>::toVector() const {
 
 template<class KeyType, class ItemType>
 HashedEntry<KeyType, ItemType>& HashedDictionary<KeyType, ItemType>::operator[](KeyType searchKey){
-    //DO NOT MODIFY
+  
     int itemHashIndex = getHashIndex(searchKey);
     HashedEntry<KeyType, ItemType> *chainPtr = hashTable[itemHashIndex];
 
